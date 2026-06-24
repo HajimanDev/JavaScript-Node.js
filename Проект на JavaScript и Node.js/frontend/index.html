@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberShop</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <a href="/" class="logo">CYBER SHOP</a>
+        <div class="nav-links">
+            <a href="/">Главная</a>
+            <a href="/cart.html">Корзина</a>
+            <a href="/orders.html">Заказы</a>
+            <a href="/bubble-feed.html" style="color: #4ecdc4;">ИНФОПУЗЫРЬ</a>
+            <a href="/login.html">Войти</a>
+            <a href="/register.html">Регистрация</a>
+        </div>
+        <div id="userInfo"></div>
+    </div>
+</div>
+
+<div class="hero">
+    <h1>ДОБРО ПОЖАЛОВАТЬ</h1>
+    <p>Лучшая техника по лучшим ценам</p>
+</div>
+
+<div class="filter-section">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск товаров..." onkeyup="filterProducts()">
+    </div>
+    
+    <div class="filter-options">
+        <div class="filter-group">
+            <label>Цена:</label>
+            <select id="priceFilter" onchange="filterProducts()">
+                <option value="all">Все цены</option>
+                <option value="0-10000">до 10 000 ₽</option>
+                <option value="10000-30000">10 000 - 30 000 ₽</option>
+                <option value="30000-50000">30 000 - 50 000 ₽</option>
+                <option value="50000-100000">50 000 - 100 000 ₽</option>
+                <option value="100000-999999">от 100 000 ₽</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Сортировка:</label>
+            <select id="sortFilter" onchange="filterProducts()">
+                <option value="name_asc">По имени (А-Я)</option>
+                <option value="name_desc">По имени (Я-А)</option>
+                <option value="price_asc">Цена (сначала дешевые)</option>
+                <option value="price_desc">Цена (сначала дорогие)</option>
+            </select>
+        </div>
+        
+        
+        <button id="resetFilters" class="reset-btn" onclick="resetFilters()">Сбросить фильтры</button>
+    </div>
+    
+    <div id="filterStats" class="filter-stats"></div>
+</div>
+
+<div>
+    <input placeholder="XSS">
+    <button type="submit"></button>
+</div>
+
+<div id="products" class="content-card"></div>
+
+<footer>
+    <p>© 2026 Cyber Shop</p>
+</footer>
+
+<script src="/index.js"></script>
+</body>
+</html>
